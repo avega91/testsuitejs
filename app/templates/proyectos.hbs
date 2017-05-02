@@ -1,0 +1,36 @@
+<h1>Proyectos</h1>
+
+<div class="row">
+    <div class="input-field col s12">
+        <label for="nombre">Nombre</label>
+        {{input type="text" class="validate" value=nombre}}
+    </div>
+    <div class="input-field col s12">
+        <label for="nombre">Descripción</label>
+        {{input type="textarea" class="validate" value=descripcion}}
+    </div>
+    <a {{action 'agregarProyecto'}} class="waves-effect waves-light btn">Agregar</a>
+</div>
+
+
+ <table class="highlight">
+        <thead>
+          <tr>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Fecha de creación</th>
+              <th>Estatus</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            {{#each model as |proyecto|}}
+                <tr>
+                    <td>{{proyecto.nombre}}</td>
+                    <td>{{proyecto.descripcion}}</td>
+                    <td>{{format-date proyecto.creado}}</td>
+                    <td>{{proyecto.estatus}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+      </table>

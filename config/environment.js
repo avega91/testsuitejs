@@ -4,6 +4,13 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'testsuitejs',
     environment: environment,
+    contentSecurityPolicy: {'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com"},
+    firebase: {
+      // apiKey: 'xyz',
+      authDomain: 'testsuitejs.firebaseapp.com',
+      databaseURL: 'https://testsuitejs.firebaseio.com',
+      storageBucket: 'testsuitejs.appspot.com',
+    },
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
